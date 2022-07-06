@@ -8,6 +8,7 @@ function App() {
   const [height, setHeight] = useState()
   const [bmi, setBmi] = useState('')
   const [message, setMessage] = useState('')
+  const [message2, setMessage2] = useState('')
 
 
 
@@ -25,15 +26,18 @@ function App() {
 
       if (weight < 25) {
         setMessage('Your suggested weight range is between 1 - 25')
+        setMessage2('You are in underweight range.')
       } else if (weight >= 25 && weight < 45) {
         setMessage('Your suggested weight range is between 25 - 45' )
-        setMessage('Your suggested weight range is between 25 - 45' )
+        setMessage2('You are in the healthy weight range.')
       }
       else if (weight >= 45 && weight < 65) {
         setMessage('Your suggested weight range is between 45 - 65')
+        setMessage2('You are in the overweight range.')
       }
        else {
         setMessage('Your suggested weight range is more than 65')
+        setMessage2('You are in the obesity range.')
       }
     }
   }
@@ -64,6 +68,7 @@ function App() {
         <div className='center'>
           <h3>Your BMI is: {bmi}</h3>
           <p>{message}</p>
+          <p>{message2}</p>
         </div>
       </div>
     </div>
